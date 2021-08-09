@@ -13,35 +13,44 @@ const styles = {
 	}
 }
 
-function News ({ header, intro }) {
+const Scoring = ({ score }) => <p> Score: </p>; //komponenty odpalone w funkcji News
+const Autor = ({ autor }) => <p>Autor: {autor} </p>; //z wartoscia ktora jest w zmiennej danych -data
+
+function News ({ header, intro, autor }) { //dostaje 3propsy
 	const [score, setScore] = useState(5);
 
 	return (
 		<div style= {styles}>
 			<h2> {header} </h2>
 			<p style={styles.para}> {intro} </p>
-			<p>Ocena: {score} </p>
+			<Autor autor={autor} />
+			<Scoring score={score} />
 		</div>
 	);
 }
 
 const data = [
 	{
-		id: 1, title:'Pilne: ... ', intro:'Tego..'
+		id: 1, autor: 'Jan brzęczek', title:'Pilne: ... ', intro:'Tego..'
 	},
 	{
-		id: 2, title:'Wszyscy... ', intro:'Takiego.'
+		id: 2, autor: 'Jan brzęczek', title:'Wszyscy... ', intro:'Takiego.'
 	},
 	{
-		id: 3, title:'Adam... ', intro:'i Żyła'
+		id: 3, autor: 'Jan brzęczek', title:'Adam... ', intro:'i Żyła'
 	}
 ];
 
 function App() {
 	return (
 		<div>
-      {data.map((elem ) => (
-        <News key={`news-${elem.id}`} header={elem.title} intro={elem.intro} ></News>
+      {data.map((elem ) => ( //renderuje sie komponenty News
+        <News 
+		key={`news-${elem.id}`}
+		header={elem.title}
+		intro={elem.intro}
+		autor={elem.autor}
+		></News>
       ))}
 		</div>
   )
