@@ -2,32 +2,7 @@ import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import './App.css';
 
-const yellow = '#f1c40f';
-
-const styles = {
-	backgroundColor: '#ecf0f1',
-	border: '#95a5a6 1px solid',
-	padding: 10,
-	para: {
-		background:yellow
-	}
-}
-
-const Scoring = ({ score }) => <p> Score: </p>; //komponenty odpalone w funkcji News
-const Autor = ({ autor }) => <p>Autor: {autor} </p>; //z wartoscia ktora jest w zmiennej danych -data
-
-function News ({ header, intro, autor }) { //dostaje 3propsy
-	const [score, setScore] = useState(5);
-
-	return (
-		<div style= {styles}>
-			<h2> {header} </h2>
-			<p style={styles.para}> {intro} </p>
-			<Autor autor={autor} />
-			<Scoring score={score} />
-		</div>
-	);
-}
+import News from "./components/News.js";
 
 const data = [
 	{
