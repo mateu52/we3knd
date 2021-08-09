@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import './App.css';
 
-import News from "./components/News.js";
+import News from "./articles/containers/News.js";
 
 const data = [
 	{
