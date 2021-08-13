@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import './App.css';
 
 import News from "./pages/Articles";
+//import Header  from "./components/Header";
+import Header from "./components/Header";
 
 const data = [
 	{
@@ -19,14 +21,26 @@ const data = [
 function App() {
 	return (
 		<div>
-      {data.map((elem ) => ( //renderuje sie komponenty News
-        <News 
-		key={`news-${elem.id}`}
-		header={elem.title}
-		intro={elem.intro}
-		autor={elem.autor}
-		></News>
-      ))}
+			
+			<div>
+            <Logo />
+            <div>
+                <NavLink to="/" label="Link 1"></NavLink>
+                <NavLink to="/" label="Link 2"></NavLink>
+                <NavLink to="/" label="Link 3"></NavLink>
+            </div>
+        </div>
+			
+
+
+			{data.map((elem ) => ( //renderuje sie komponenty News
+				<News 
+				key={`news-${elem.id}`}
+				header={elem.title}
+				intro={elem.intro}
+				autor={elem.autor}
+				></News>
+			))}
 		</div>
   )
 }
