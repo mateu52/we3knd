@@ -22,16 +22,7 @@ function App() {
 	return (
 		<div>
 			
-			<div>
-            <Logo />
-            <div>
-                <NavLink to="/" label="Link 1"></NavLink>
-                <NavLink to="/" label="Link 2"></NavLink>
-                <NavLink to="/" label="Link 3"></NavLink>
-            </div>
-        </div>
-			
-
+			<Header />
 
 			{data.map((elem ) => ( //renderuje sie komponenty News
 				<News 
