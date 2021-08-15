@@ -1,30 +1,32 @@
-import React, {useState} from "react";
+import React from 'react';
 
-import Autor from "../components/Autor/Autor";
-import Scoring from "../components/Scoring/Scoring";
+import News from "../components/News";
 
-const yellow = '#f1c40f';
-
-const styles = {
-	backgroundColor: '#ecf0f1',
-	border: '#95a5a6 1px solid',
-	padding: 10,
-	para: {
-		background:yellow
+const data = [
+	{
+		id: 1, autor: 'Jan brzęczek', title:'Pilne: ... ', intro:'Tego..'
+	},
+	{
+		id: 2, autor: 'Jan brzęczek', title:'Wszyscy... ', intro:'Takiego.'
+	},
+	{
+		id: 3, autor: 'Jan brzęczek', title:'Adam... ', intro:'i Żyła'
 	}
-};
+];
 
-function News ({ header, intro, autor }) { //dostaje 3propsy
-	const [score, setScore] = useState(5);
-
+function Articles() {
 	return (
-		<div style= {styles}>
-			<h2> {header} </h2>
-			<p style={styles.para}> {intro} </p>
-			<Autor autor={autor} />
-			<Scoring score={score} />
+		<div>
+			{data.map((elem ) => ( //renderuje sie komponenty News
+				<News 
+				key={`news-${elem.id}`}
+				header={elem.title}
+				intro={elem.intro}
+				autor={elem.autor}
+				></News>
+			))}
 		</div>
 	);
 }
 
-export default News;
+export default Articles;
